@@ -112,7 +112,9 @@ end
 
 describe XmlFeed do
   before :each do
+    @net_http_404 = mock('Net::HTTPNotFound', :[] => nil)
     @feed = XmlFeed.new("url://example.com/foo/bar")
+    @feed.stub!(:head).and_return @net_http_404
   end
   
   it "should raise a parse error if the last modified on date cannot be found" do
