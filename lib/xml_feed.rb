@@ -1,8 +1,8 @@
 
 require 'rubygems'
-require 'net/http'
-require 'zlib'
-require 'xmlsimple'
+require 'net/http'  unless Object.const_defined?(:Net)
+require 'zlib'      unless Object.const_defined?(:Zlib)
+require 'xmlsimple' unless Object.const_defined?(:XmlSimple)
 
 class XmlFeed
 
