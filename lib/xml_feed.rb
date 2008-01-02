@@ -1,9 +1,9 @@
 
 require 'rubygems'
-require 'net/http'  unless Object.const_defined?(:Net)
-require 'zlib'      unless Object.const_defined?(:Zlib)
+require 'net/http'  unless Object.const_defined?(:Net) && Net.const_defined?(:HTTP)
+require 'zlib'      
 require 'xmlsimple' unless Object.const_defined?(:XmlSimple)
-require 'time'
+require 'time'      
 
 class XmlFeed
 
@@ -127,6 +127,6 @@ private
   end
 end
 
-XMLFeed = XmlFeed
+XMLFeed = XmlFeed unless Object.const_defined?(:XMLFeed)
 
 
