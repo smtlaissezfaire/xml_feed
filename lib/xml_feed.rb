@@ -126,7 +126,3 @@ private
     return @feed
   end
 end
-
-XMLFeed = XmlFeed unless Object.const_defined?(:XMLFeed)
-
-

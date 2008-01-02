@@ -27,7 +27,7 @@ describe "XmlFeed" do
   end
   
   it "should not require 'net/http' if Net:HTTP is defined" do
-    Object.stub!(:const_defined?).and_return true
+    Object.stub!(:const_defined?).with(:Net).and_return true
     Net.stub!(:const_defined?).and_return true
     top_level.should_not_receive(:require).with("net/http")
     load_file
@@ -45,7 +45,7 @@ describe "XmlFeed" do
   end
   
   it "should not require xml simple if it is already defined" do
-    Object.stub!(:const_defined?).and_return true
+    Object.stub!(:const_defined?).with(:XmlSimple).and_return true
     
     top_level.should_not_receive(:require).with("xmlsimple")
     load_file

@@ -67,8 +67,3 @@ describe XmlFeed do
   end
 end  
 
-describe XMLFeed do
-  it "should be the same as the XmlFeed" do
-    XMLFeed.should == XmlFeed
-  end
-end
