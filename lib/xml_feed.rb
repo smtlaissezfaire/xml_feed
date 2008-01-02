@@ -3,6 +3,7 @@ require 'rubygems'
 require 'net/http'  unless Object.const_defined?(:Net)
 require 'zlib'      unless Object.const_defined?(:Zlib)
 require 'xmlsimple' unless Object.const_defined?(:XmlSimple)
+require 'time'
 
 class XmlFeed
 
